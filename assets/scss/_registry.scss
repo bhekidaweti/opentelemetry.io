@@ -39,3 +39,47 @@
 .registry-entry {
   @extend .shadow;
 }
+.tooltip-hover::after {
+  position: absolute;
+  background-color: #0b5394;  
+  color: white;
+  font-size: 0.85rem;  
+  border-radius: 4px;  
+  bottom: 120%;
+  left: 0;
+  white-space: break-spaces;  
+  padding: 4px 8px;  
+  z-index: 1000;  
+}
+
+
+.btn-submit-hover:hover::after {
+  content: "Submit your search query.";
+  @extend .tooltip-hover; 
+}
+
+.btn-clear-hover:hover::after {
+  content: "Clear search and reset filters.";
+  @extend .tooltip-hover; 
+}
+
+#languageDropdown:hover::after {
+  content: "Select the programming language.";
+  @extend .tooltip-hover;
+}
+
+#componentDropdown:hover::after {
+  content: "Choose the component type.";
+  @extend .tooltip-hover;
+}
+
+.hover-hint {
+  position: relative; 
+  cursor: pointer;
+  text-decoration: underline dotted #0b5394;
+}
+
+.hover-hint:hover::after {
+  content: attr(title); 
+  @extend .tooltip-hover;
+}
